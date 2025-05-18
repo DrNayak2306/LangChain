@@ -61,6 +61,10 @@
 #   endif
 #endif
 
+#ifndef TCL_INDEX_NONE
+# define TCL_INDEX_NONE	(-1)
+#endif
+
 #ifndef JOIN
 #  define JOIN(a,b) JOIN1(a,b)
 #  define JOIN1(a,b) a##b
@@ -759,10 +763,10 @@ MODULE_SCOPE int DelegatedOptionsInstall(Tcl_Interp *interp,
 	ItclClass *iclsPtr);
 MODULE_SCOPE int Itcl_HandleDelegateOptionCmd(Tcl_Interp *interp,
 	ItclObject *ioPtr, ItclClass *iclsPtr, ItclDelegatedOption **idoPtrPtr,
-	size_t objc, Tcl_Obj *const objv[]);
+	Tcl_Size objc, Tcl_Obj *const objv[]);
 MODULE_SCOPE int Itcl_HandleDelegateMethodCmd(Tcl_Interp *interp,
 	ItclObject *ioPtr, ItclClass *iclsPtr,
-	ItclDelegatedFunction **idmPtrPtr, size_t objc, Tcl_Obj *const objv[]);
+	ItclDelegatedFunction **idmPtrPtr, Tcl_Size objc, Tcl_Obj *const objv[]);
 MODULE_SCOPE int DelegateFunction(Tcl_Interp *interp, ItclObject *ioPtr,
 	ItclClass *iclsPtr, Tcl_Obj *componentNamePtr,
 	ItclDelegatedFunction *idmPtr);
@@ -810,7 +814,7 @@ MODULE_SCOPE int ItclAddClassFunctionDictInfo(Tcl_Interp *interp,
 MODULE_SCOPE int ItclAddClassDelegatedFunctionDictInfo(Tcl_Interp *interp,
 	ItclClass *iclsPtr, ItclDelegatedFunction *idmPtr);
 MODULE_SCOPE int ItclClassCreateObject(void *clientData, Tcl_Interp *interp,
-	size_t objc, Tcl_Obj *const objv[]);
+	Tcl_Size objc, Tcl_Obj *const objv[]);
 
 MODULE_SCOPE void ItclRestoreInfoVars(void *clientData);
 
