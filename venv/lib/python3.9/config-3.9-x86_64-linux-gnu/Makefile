@@ -28,18 +28,18 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.9
-srcdir=		/tmp/build/80754af9/python-split_1605449976777/work
-VPATH=		/tmp/build/80754af9/python-split_1605449976777/work
-abs_srcdir=	/tmp/build/80754af9/python-split_1605449976777/work
-abs_builddir=	/tmp/build/80754af9/python-split_1605449976777/work/build-static
+srcdir=		/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work
+VPATH=		/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work
+abs_srcdir=	/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work
+abs_builddir=	/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/build-static
 
 
-CC=		 x86_64-conda_cos6-linux-gnu-gcc -pthread
-CXX=		x86_64-conda_cos6-linux-gnu-c++ -pthread
+CC=		x86_64-conda-linux-gnu-gcc -pthread
+CXX=		x86_64-conda-linux-gnu-c++ -pthread
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
-AR=		x86_64-conda_cos6-linux-gnu-ar
-READELF=	x86_64-conda_cos6-linux-gnu-readelf
+AR=		x86_64-conda-linux-gnu-ar
+READELF=	x86_64-conda-linux-gnu-readelf
 SOABI=		cpython-39-x86_64-linux-gnu
 LDVERSION=	$(VERSION)$(ABIFLAGS)
 LIBPYTHON=	
@@ -73,15 +73,15 @@ INSTALL_DATA=	${INSTALL} -m 644
 # rather than figuring out exactly which, we always give them executable mode.
 INSTALL_SHARED= ${INSTALL} -m 755
 
-MKDIR_P=	/bin/mkdir -p
+MKDIR_P=	/usr/bin/mkdir -p
 
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
-OPT=		-DNDEBUG  -O2 -Wall
+OPT=		-DNDEBUG -fwrapv -O2 -Wall
 BASECFLAGS=	 -Wno-unused-result -Wsign-compare
 BASECPPFLAGS=	-IObjects -IInclude -IPython
-CONFIGURE_CFLAGS=	-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include      
+CONFIGURE_CFLAGS=	-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work=/usr/local/src/conda/python-3.9.18 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
 # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
 # once Python is installed (Issue #21121).
@@ -91,7 +91,7 @@ CONFIGURE_CFLAGS_NODIST=     -g -std=c99 -Wextra -Wno-unused-result -Wno-unused-
 # once Python is installed (bpo-35257)
 CONFIGURE_LDFLAGS_NODIST=     -g
 CONFIGURE_CPPFLAGS=	-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include
-CONFIGURE_LDFLAGS=	-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib
+CONFIGURE_LDFLAGS=	-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib
 # Avoid assigning CFLAGS, LDFLAGS, etc. so users can use them on the
 # command line to append to these values without stomping the pre-set
 # values.
@@ -104,7 +104,6 @@ PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPP
 PY_LDFLAGS=	$(CONFIGURE_LDFLAGS) $(LDFLAGS)
 PY_LDFLAGS_NODIST=$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)
 NO_AS_NEEDED=	-Wl,--no-as-needed
-SGI_ABI=	@SGI_ABI@
 CCSHARED=	-fPIC
 # LINKFORSHARED are the flags passed to the $(CC) command that links
 # the python executable -- this is only needed for a few systems
@@ -188,6 +187,9 @@ STRIPFLAG=-s
 # Flags to lipo to produce a 32-bit-only universal executable
 LIPO_32BIT_FLAGS=
 
+# Flags to lipo to produce an intel-64-only universal executable
+LIPO_INTEL64_FLAGS=
+
 # Options to enable prebinding (for fast startup prior to Mac OS X 10.3)
 OTHER_LIBTOOL_OPT=
 
@@ -212,7 +214,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--prefix=/home/dhruv/Desktop/LangChain/venv' '--build=x86_64-conda_cos6-linux-gnu' '--host=x86_64-conda_cos6-linux-gnu' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/home/dhruv/Desktop/LangChain/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/home/dhruv/Desktop/LangChain/venv/include' '--with-tcltk-libs=-L/home/dhruv/Desktop/LangChain/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=x86_64-conda_cos6-linux-gnu' 'host_alias=x86_64-conda_cos6-linux-gnu' 'MACHDEP=linux' 'CC= x86_64-conda_cos6-linux-gnu-gcc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include      ' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include' 'CPP=/tmp/build/80754af9/python-split_1605449976777/_build_env/bin/x86_64-conda_cos6-linux-gnu-cpp' 'PKG_CONFIG_PATH=/home/dhruv/Desktop/LangChain/venv/lib/pkgconfig'
+CONFIG_ARGS=	 '--prefix=/home/dhruv/Desktop/LangChain/venv' '--build=x86_64-conda-linux-gnu' '--host=x86_64-conda-linux-gnu' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/home/dhruv/Desktop/LangChain/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/home/dhruv/Desktop/LangChain/venv/include' '--with-tcltk-libs=-L/home/dhruv/Desktop/LangChain/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/_build_env/x86_64-conda-linux-gnu/sysroot/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=x86_64-conda-linux-gnu' 'host_alias=x86_64-conda-linux-gnu' 'MACHDEP=linux' 'CC=x86_64-conda-linux-gnu-gcc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work=/usr/local/src/conda/python-3.9.18 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    ' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include' 'CPP=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/_build_env/bin/x86_64-conda-linux-gnu-cpp' 'PKG_CONFIG_PATH=/home/dhruv/Desktop/LangChain/venv/lib/pkgconfig'
 
 
 # Subdirectories with code
@@ -237,7 +239,7 @@ LDLIBRARYDIR=
 INSTSONAME=	$(LDLIBRARY)
 
 
-LIBS=		-lcrypt -lpthread -ldl  -lutil -lrt -lm
+LIBS=		-lcrypt -lpthread -ldl  -lutil -lm
 LIBM=		-lm
 LIBC=		
 SYSLIBS=	$(LIBM) $(LIBC)
@@ -257,8 +259,8 @@ UPDATE_FILE=python3 $(srcdir)/Tools/scripts/update_file.py
 PY_BUILD_ENVIRON=
 PYTHON_FOR_BUILD=./$(BUILDPYTHON) -E
 _PYTHON_HOST_PLATFORM=linux-x86_64
-BUILD_GNU_TYPE=	x86_64-conda_cos6-linux-gnu
-HOST_GNU_TYPE=	x86_64-conda_cos6-linux-gnu
+BUILD_GNU_TYPE=	x86_64-conda-linux-gnu
+HOST_GNU_TYPE=	x86_64-conda-linux-gnu
 
 # Tcl and Tk config info from --with-tcltk-includes and -libs options
 TCLTK_INCLUDES=	-I/home/dhruv/Desktop/LangChain/venv/include
@@ -766,6 +768,13 @@ regen-importlib: Programs/_freeze_importlib
 	    $(srcdir)/Python/importlib_zipimport.h.new
 	$(UPDATE_FILE) $(srcdir)/Python/importlib_zipimport.h $(srcdir)/Python/importlib_zipimport.h.new
 
+regen-abidump: all
+	@$(MKDIR_P) $(srcdir)/Doc/data/
+	abidw "libpython$(LDVERSION).so" --no-architecture --out-file $(srcdir)/Doc/data/python$(LDVERSION).abi.new
+	@$(UPDATE_FILE) $(srcdir)/Doc/data/python$(LDVERSION).abi $(srcdir)/Doc/data/python$(LDVERSION).abi.new
+
+check-abidump: all
+		abidiff $(srcdir)/Doc/data/python$(LDVERSION).abi "libpython$(LDVERSION).so" --drop-private-types --no-architecture --no-added-syms
 
 ############################################################################
 # Regenerate all generated files
@@ -1127,6 +1136,7 @@ PYTHON_HEADERS= \
 		$(srcdir)/Include/cpython/dictobject.h \
 		$(srcdir)/Include/cpython/fileobject.h \
 		$(srcdir)/Include/cpython/fileutils.h \
+		$(srcdir)/Include/cpython/frameobject.h \
 		$(srcdir)/Include/cpython/import.h \
 		$(srcdir)/Include/cpython/initconfig.h \
 		$(srcdir)/Include/cpython/interpreteridobject.h \
@@ -1162,6 +1172,7 @@ PYTHON_HEADERS= \
 		$(srcdir)/Include/internal/pycore_import.h \
 		$(srcdir)/Include/internal/pycore_initconfig.h \
 		$(srcdir)/Include/internal/pycore_interp.h \
+		$(srcdir)/Include/internal/pycore_long.h \
 		$(srcdir)/Include/internal/pycore_object.h \
 		$(srcdir)/Include/internal/pycore_pathconfig.h \
 		$(srcdir)/Include/internal/pycore_pyerrors.h \
@@ -1339,6 +1350,12 @@ altbininstall: $(BUILDPYTHON)
 			-output $(DESTDIR)$(BINDIR)/python$(VERSION)-32$(EXE) \
 			$(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE); \
 	fi
+	if test "x$(LIPO_INTEL64_FLAGS)" != "x" ; then \
+		rm -f $(DESTDIR)$(BINDIR)python$(VERSION)-intel64$(EXE); \
+		lipo $(LIPO_INTEL64_FLAGS) \
+			-output $(DESTDIR)$(BINDIR)/python$(VERSION)-intel64$(EXE) \
+			$(DESTDIR)$(BINDIR)/python$(VERSION)$(EXE); \
+	fi
 
 bininstall: altbininstall
 	if test ! -d $(DESTDIR)$(LIBPC); then \
@@ -1373,6 +1390,10 @@ bininstall: altbininstall
 	if test "x$(LIPO_32BIT_FLAGS)" != "x" ; then \
 		rm -f $(DESTDIR)$(BINDIR)/python3-32$(EXE); \
 		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-32$(EXE) python3-32$(EXE)) \
+	fi
+	if test "x$(LIPO_INTEL64_FLAGS)" != "x" ; then \
+		rm -f $(DESTDIR)$(BINDIR)/python3-intel64$(EXE); \
+		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-intel64$(EXE) python3-intel64$(EXE)) \
 	fi
 
 # Install the versioned manual page
@@ -1451,6 +1472,7 @@ LIBSUBDIRS=	tkinter tkinter/test tkinter/test/test_tkinter \
 		test/test_importlib/namespace_pkgs/project3 \
 		test/test_importlib/namespace_pkgs/project3/parent \
 		test/test_importlib/namespace_pkgs/project3/parent/child \
+		test/test_importlib/partial \
 		test/test_importlib/source \
 		test/test_importlib/zipdata01 \
 		test/test_importlib/zipdata02 \
@@ -1635,7 +1657,7 @@ LIBPL=		$(prefix)/lib/python3.9/config-$(VERSION)$(ABIFLAGS)-x86_64-linux-gnu
 LIBPC=		$(LIBDIR)/pkgconfig
 
 libainstall:	build_all python-config
-	@for i in $(LIBDIR) $(LIBPL) $(LIBPC); \
+	@for i in $(LIBDIR) $(LIBPL) $(LIBPC) $(BINDIR); \
 	do \
 		if test ! -d $(DESTDIR)$$i; then \
 			echo "Creating directory $$i"; \
@@ -1937,6 +1959,12 @@ funny:
 # Perform some verification checks on any modified files.
 patchcheck: build_all
 	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/patchcheck.py
+
+.PHONY: update-config
+update-config:
+	curl -sL -o config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+	curl -sL -o config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+	chmod +x config.guess config.sub
 
 # Dependencies
 

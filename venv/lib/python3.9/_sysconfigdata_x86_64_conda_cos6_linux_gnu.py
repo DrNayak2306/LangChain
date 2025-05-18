@@ -13,15 +13,16 @@ build_time_vars = {'ABIFLAGS': '',
  'BINDIR': '/home/dhruv/Desktop/LangChain/venv/bin',
  'BINLIBDEST': '/home/dhruv/Desktop/LangChain/venv/lib/python3.9',
  'BLDLIBRARY': 'libpython3.9.a',
- 'BLDSHARED': ' '
-              'x86_64-conda_cos6-linux-gnu-gcc -pthread -shared -Wl,-O2 '
+ 'BLDSHARED': 'x86_64-conda_cos6-linux-gnu-gcc -pthread -shared -Wl,-O2 '
               '-Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now '
               '-Wl,--disable-new-dtags -Wl,--gc-sections '
+              '-Wl,--allow-shlib-undefined '
               '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
               '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
               '-L/home/dhruv/Desktop/LangChain/venv/lib '
               '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
               '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+              '-Wl,--allow-shlib-undefined '
               '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
               '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
               '-L/home/dhruv/Desktop/LangChain/venv/lib',
@@ -29,10 +30,9 @@ build_time_vars = {'ABIFLAGS': '',
  'BUILDPYTHON': 'python',
  'BUILD_GNU_TYPE': 'x86_64-conda_cos6-linux-gnu',
  'BYTESTR_DEPS': '\\',
- 'CC': ' '
-       'x86_64-conda_cos6-linux-gnu-gcc -pthread',
+ 'CC': 'x86_64-conda_cos6-linux-gnu-gcc -pthread',
  'CCSHARED': '-fPIC',
- 'CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG  -O2 -Wall '
+ 'CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall '
            '-march=nocona -mtune=haswell -ftree-vectorize -fPIC '
            '-fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe '
            '-isystem '
@@ -70,6 +70,7 @@ build_time_vars = {'ABIFLAGS': '',
                        '-I/home/dhruv/Desktop/LangChain/venv/include',
  'CONFIGURE_LDFLAGS': '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
                       '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+                      '-Wl,--allow-shlib-undefined '
                       '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                       '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                       '-L/home/dhruv/Desktop/LangChain/venv/lib',
@@ -86,12 +87,11 @@ build_time_vars = {'ABIFLAGS': '',
                 "'--with-tcltk-libs=-L/home/dhruv/Desktop/LangChain/venv/lib "
                 "-ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' "
                 "'--enable-optimizations' "
-                "'-oldincludedir=/usr/include' "
+                "'-oldincludedir=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/_build_env/x86_64-conda_cos6-linux-gnu/sysroot/usr/include' "
                 "'--disable-shared' 'PROFILE_TASK=-m test --pgo' "
                 "'build_alias=x86_64-conda_cos6-linux-gnu' "
                 "'host_alias=x86_64-conda_cos6-linux-gnu' 'MACHDEP=linux' "
-                "'CC= "
-                "x86_64-conda_cos6-linux-gnu-gcc' 'CFLAGS=-march=nocona "
+                "'CC=x86_64-conda_cos6-linux-gnu-gcc' 'CFLAGS=-march=nocona "
                 '-mtune=haswell -ftree-vectorize -fPIC '
                 '-fstack-protector-strong -fno-plt -O2 -ffunction-sections '
                 '-pipe -isystem '
@@ -101,24 +101,24 @@ build_time_vars = {'ABIFLAGS': '',
                 '   '
                 "' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed "
                 '-Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags '
-                '-Wl,--gc-sections '
+                '-Wl,--gc-sections -Wl,--allow-shlib-undefined '
                 '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                 '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                 "-L/home/dhruv/Desktop/LangChain/venv/lib' "
                 "'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem "
                 '/home/dhruv/Desktop/LangChain/venv/include '
                 "-I/home/dhruv/Desktop/LangChain/venv/include' "
-                "'CPP=/tmp/build/80754af9/python-split_1605449976777/_build_env/bin/x86_64-conda_cos6-linux-gnu-cpp' "
+                "'CPP=/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/_build_env/bin/x86_64-conda_cos6-linux-gnu-cpp' "
                 "'PKG_CONFIG_PATH=/home/dhruv/Desktop/LangChain/venv/lib/pkgconfig'",
  'CONFINCLUDEDIR': '/home/dhruv/Desktop/LangChain/venv/include',
  'CONFINCLUDEPY': '/home/dhruv/Desktop/LangChain/venv/include/python3.9',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/tmp/build/80754af9/python-split_1605449976777/work/build-static/coverage.info',
- 'COVERAGE_REPORT': '/tmp/build/80754af9/python-split_1605449976777/work/build-static/lcov-report',
+ 'COVERAGE_INFO': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/build-static/coverage.info',
+ 'COVERAGE_REPORT': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/build-static/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-             '-I/tmp/build/80754af9/python-split_1605449976777/work/Include '
+             '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include '
              '-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem '
              '/home/dhruv/Desktop/LangChain/venv/include '
              '-I/home/dhruv/Desktop/LangChain/venv/include '
@@ -165,7 +165,7 @@ build_time_vars = {'ABIFLAGS': '',
  'GITBRANCH': '',
  'GITTAG': '',
  'GITVERSION': '',
- 'GNULD': 'yes',
+ 'GNULD': 'no',
  'HAVE_ACCEPT4': 1,
  'HAVE_ACOSH': 1,
  'HAVE_ADDRINFO': 1,
@@ -348,8 +348,10 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_LIBRESOLV': 0,
  'HAVE_LIBSENDFILE': 0,
  'HAVE_LIBUTIL_H': 0,
+ 'HAVE_LIBUUID': 1,
  'HAVE_LINK': 1,
  'HAVE_LINKAT': 1,
+ 'HAVE_LINUX_AUXVEC_H': 1,
  'HAVE_LINUX_CAN_BCM_H': 0,
  'HAVE_LINUX_CAN_H': 1,
  'HAVE_LINUX_CAN_J1939_H': 0,
@@ -388,6 +390,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_NETPACKET_PACKET_H': 1,
  'HAVE_NET_IF_H': 1,
  'HAVE_NICE': 1,
+ 'HAVE_NON_UNICODE_WCHAR_T_REPRESENTATION': 0,
  'HAVE_OPENAT': 1,
  'HAVE_OPENPTY': 1,
  'HAVE_PATHCONF': 1,
@@ -438,6 +441,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SCHED_SETAFFINITY': 1,
  'HAVE_SCHED_SETPARAM': 1,
  'HAVE_SCHED_SETSCHEDULER': 1,
+ 'HAVE_SEM_CLOCKWAIT': 0,
  'HAVE_SEM_GETVALUE': 1,
  'HAVE_SEM_OPEN': 1,
  'HAVE_SEM_TIMEDWAIT': 1,
@@ -493,7 +497,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_STRINGS_H': 1,
  'HAVE_STRING_H': 1,
  'HAVE_STRLCPY': 0,
- 'HAVE_STROPTS_H': 1,
+ 'HAVE_STROPTS_H': 0,
  'HAVE_STRSIGNAL': 1,
  'HAVE_STRUCT_PASSWD_PW_GECOS': 1,
  'HAVE_STRUCT_PASSWD_PW_PASSWD': 1,
@@ -510,6 +514,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SYSCONF': 1,
  'HAVE_SYSEXITS_H': 1,
  'HAVE_SYS_AUDIOIO_H': 0,
+ 'HAVE_SYS_AUXV_H': 0,
  'HAVE_SYS_BSDTTY_H': 0,
  'HAVE_SYS_DEVPOLL_H': 0,
  'HAVE_SYS_DIR_H': 0,
@@ -573,7 +578,7 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_UUID_CREATE': 0,
  'HAVE_UUID_ENC_BE': 0,
  'HAVE_UUID_GENERATE_TIME_SAFE': 1,
- 'HAVE_UUID_H': 0,
+ 'HAVE_UUID_H': 1,
  'HAVE_UUID_UUID_H': 1,
  'HAVE_WAIT3': 1,
  'HAVE_WAIT4': 1,
@@ -607,25 +612,28 @@ build_time_vars = {'ABIFLAGS': '',
  'LDCXXSHARED': 'x86_64-conda_cos6-linux-gnu-c++ -pthread -shared',
  'LDFLAGS': '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now '
             '-Wl,--disable-new-dtags -Wl,--gc-sections '
+            '-Wl,--allow-shlib-undefined '
             '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
             '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
             '-L/home/dhruv/Desktop/LangChain/venv/lib '
             '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now '
             '-Wl,--disable-new-dtags -Wl,--gc-sections '
+            '-Wl,--allow-shlib-undefined '
             '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
             '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
             '-L/home/dhruv/Desktop/LangChain/venv/lib',
  'LDLIBRARY': 'libpython3.9.a',
  'LDLIBRARYDIR': '',
- 'LDSHARED': ' '
-             'x86_64-conda_cos6-linux-gnu-gcc -pthread -shared -Wl,-O2 '
+ 'LDSHARED': 'x86_64-conda_cos6-linux-gnu-gcc -pthread -shared -Wl,-O2 '
              '-Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now '
              '-Wl,--disable-new-dtags -Wl,--gc-sections '
+             '-Wl,--allow-shlib-undefined '
              '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
              '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
              '-L/home/dhruv/Desktop/LangChain/venv/lib '
              '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
              '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+             '-Wl,--allow-shlib-undefined '
              '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
              '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
              '-L/home/dhruv/Desktop/LangChain/venv/lib',
@@ -643,12 +651,12 @@ build_time_vars = {'ABIFLAGS': '',
  'LIBRARY': 'libpython3.9.a',
  'LIBRARY_OBJS': '\\',
  'LIBRARY_OBJS_OMIT_FROZEN': '\\',
- 'LIBS': '-lcrypt -lpthread -ldl  -lutil -lrt -lm',
+ 'LIBS': '-lcrypt -lpthread -ldl  -lutil -lm',
  'LIBSUBDIRS': 'tkinter tkinter/test tkinter/test/test_tkinter \\',
- 'LINKCC': ' '
-           'x86_64-conda_cos6-linux-gnu-gcc -pthread',
+ 'LINKCC': 'x86_64-conda_cos6-linux-gnu-gcc -pthread',
  'LINKFORSHARED': '-Xlinker -export-dynamic',
  'LIPO_32BIT_FLAGS': '',
+ 'LIPO_INTEL64_FLAGS': '',
  'LLVM_PROF_ERR': 'no',
  'LLVM_PROF_FILE': '',
  'LLVM_PROF_MERGER': 'true',
@@ -658,13 +666,12 @@ build_time_vars = {'ABIFLAGS': '',
  'MACHDEP_OBJS': '',
  'MACHDESTLIB': '/home/dhruv/Desktop/LangChain/venv/lib/python3.9',
  'MACOSX_DEPLOYMENT_TARGET': '',
- 'MAINCC': ' '
-           'x86_64-conda_cos6-linux-gnu-gcc -pthread',
+ 'MAINCC': 'x86_64-conda_cos6-linux-gnu-gcc -pthread',
  'MAJOR_IN_MKDEV': 0,
  'MAJOR_IN_SYSMACROS': 0,
- 'MAKESETUP': '/tmp/build/80754af9/python-split_1605449976777/work/Modules/makesetup',
+ 'MAKESETUP': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Modules/makesetup',
  'MANDIR': '/home/dhruv/Desktop/LangChain/venv/share/man',
- 'MKDIR_P': '/bin/mkdir -p',
+ 'MKDIR_P': '/usr/bin/mkdir -p',
  'MODBUILT_NAMES': 'posix  errno  pwd  _sre  _codecs  _weakref  _functools  '
                    '_operator  _collections  _abc  itertools  atexit  _signal  '
                    '_stat  time  _thread  _locale  _io  faulthandler  '
@@ -692,7 +699,7 @@ build_time_vars = {'ABIFLAGS': '',
  'OPENSSL_INCLUDES': '-I/home/dhruv/Desktop/LangChain/venv/include',
  'OPENSSL_LDFLAGS': '-L/home/dhruv/Desktop/LangChain/venv/lib',
  'OPENSSL_LIBS': '-lssl -lcrypto',
- 'OPT': '-DNDEBUG  -O2 -Wall',
+ 'OPT': '-DNDEBUG -fwrapv -O2 -Wall',
  'OTHER_LIBTOOL_OPT': '',
  'PACKAGE_BUGREPORT': 0,
  'PACKAGE_NAME': 0,
@@ -727,8 +734,8 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHON_OBJS': '\\',
  'PY_BUILD_ENVIRON': '',
  'PY_BUILTIN_HASHLIB_HASHES': '"md5,sha1,sha256,sha512,sha3,blake2"',
- 'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG  -O2 '
-                             '-Wall -march=nocona -mtune=haswell '
+ 'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG '
+                             '-fwrapv -O2 -Wall -march=nocona -mtune=haswell '
                              '-ftree-vectorize -fPIC -fstack-protector-strong '
                              '-fno-plt -O2 -ffunction-sections -pipe -isystem '
                              '/home/dhruv/Desktop/LangChain/venv/include '
@@ -751,9 +758,9 @@ build_time_vars = {'ABIFLAGS': '',
                              '-Werror=implicit-function-declaration '
                              '-fvisibility=hidden  '
                              ' '
-                             '-I/tmp/build/80754af9/python-split_1605449976777/work/Include/internal '
+                             '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include/internal '
                              '-IObjects -IInclude -IPython -I. '
-                             '-I/tmp/build/80754af9/python-split_1605449976777/work/Include '
+                             '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include '
                              '-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem '
                              '/home/dhruv/Desktop/LangChain/venv/include '
                              '-I/home/dhruv/Desktop/LangChain/venv/include '
@@ -761,7 +768,7 @@ build_time_vars = {'ABIFLAGS': '',
                              '/home/dhruv/Desktop/LangChain/venv/include '
                              '-I/home/dhruv/Desktop/LangChain/venv/include '
                              '-DPy_BUILD_CORE_BUILTIN',
- 'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG  -O2 -Wall '
+ 'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall '
               '-march=nocona -mtune=haswell -ftree-vectorize -fPIC '
               '-fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe '
               '-isystem '
@@ -783,10 +790,10 @@ build_time_vars = {'ABIFLAGS': '',
                      '-Wno-missing-field-initializers '
                      '-Werror=implicit-function-declaration '
                      '-fvisibility=hidden   '
-                     '-I/tmp/build/80754af9/python-split_1605449976777/work/Include/internal',
+                     '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include/internal',
  'PY_COERCE_C_LOCALE': 1,
- 'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG  -O2 -Wall '
-                   '-march=nocona -mtune=haswell -ftree-vectorize -fPIC '
+ 'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 '
+                   '-Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC '
                    '-fstack-protector-strong -fno-plt -O2 -ffunction-sections '
                    '-pipe -isystem '
                    '/home/dhruv/Desktop/LangChain/venv/include '
@@ -806,9 +813,9 @@ build_time_vars = {'ABIFLAGS': '',
                    '-Wno-missing-field-initializers '
                    '-Werror=implicit-function-declaration -fvisibility=hidden '
                    '  '
-                   '-I/tmp/build/80754af9/python-split_1605449976777/work/Include/internal '
+                   '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include/internal '
                    '-IObjects -IInclude -IPython -I. '
-                   '-I/tmp/build/80754af9/python-split_1605449976777/work/Include '
+                   '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include '
                    '-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem '
                    '/home/dhruv/Desktop/LangChain/venv/include '
                    '-I/home/dhruv/Desktop/LangChain/venv/include '
@@ -818,18 +825,20 @@ build_time_vars = {'ABIFLAGS': '',
                    '-DPy_BUILD_CORE',
  'PY_CORE_LDFLAGS': '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
                     '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+                    '-Wl,--allow-shlib-undefined '
                     '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                     '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                     '-L/home/dhruv/Desktop/LangChain/venv/lib '
                     '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
                     '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+                    '-Wl,--allow-shlib-undefined '
                     '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                     '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                     '-L/home/dhruv/Desktop/LangChain/venv/lib '
                     '   '
                     ' -g',
  'PY_CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-                '-I/tmp/build/80754af9/python-split_1605449976777/work/Include '
+                '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include '
                 '-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem '
                 '/home/dhruv/Desktop/LangChain/venv/include '
                 '-I/home/dhruv/Desktop/LangChain/venv/include '
@@ -839,11 +848,13 @@ build_time_vars = {'ABIFLAGS': '',
  'PY_FORMAT_SIZE_T': '"z"',
  'PY_LDFLAGS': '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
                '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+               '-Wl,--allow-shlib-undefined '
                '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                '-L/home/dhruv/Desktop/LangChain/venv/lib '
                '-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro '
                '-Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections '
+               '-Wl,--allow-shlib-undefined '
                '-Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib '
                '-Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib '
                '-L/home/dhruv/Desktop/LangChain/venv/lib',
@@ -851,10 +862,10 @@ build_time_vars = {'ABIFLAGS': '',
                       ' -g',
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
- 'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG  -O2 -Wall '
-                        '-march=nocona -mtune=haswell -ftree-vectorize -fPIC '
-                        '-fstack-protector-strong -fno-plt -O2 '
-                        '-ffunction-sections -pipe -isystem '
+ 'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv '
+                        '-O2 -Wall -march=nocona -mtune=haswell '
+                        '-ftree-vectorize -fPIC -fstack-protector-strong '
+                        '-fno-plt -O2 -ffunction-sections -pipe -isystem '
                         '/home/dhruv/Desktop/LangChain/venv/include '
                         ' '
                         ' '
@@ -874,9 +885,9 @@ build_time_vars = {'ABIFLAGS': '',
                         '-Werror=implicit-function-declaration '
                         '-fvisibility=hidden  '
                         ' '
-                        '-I/tmp/build/80754af9/python-split_1605449976777/work/Include/internal '
+                        '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include/internal '
                         '-IObjects -IInclude -IPython -I. '
-                        '-I/tmp/build/80754af9/python-split_1605449976777/work/Include '
+                        '-I/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Include '
                         '-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem '
                         '/home/dhruv/Desktop/LangChain/venv/include '
                         '-I/home/dhruv/Desktop/LangChain/venv/include '
@@ -894,9 +905,8 @@ build_time_vars = {'ABIFLAGS': '',
  'RUNSHARED': '',
  'SCRIPTDIR': '/home/dhruv/Desktop/LangChain/venv/lib',
  'SETPGRP_HAVE_ARG': 0,
- 'SGI_ABI': '',
  'SHELL': '/bin/sh',
- 'SHLIBS': '-lcrypt -lpthread -ldl  -lutil -lrt -lm',
+ 'SHLIBS': '-lcrypt -lpthread -ldl  -lutil -lm',
  'SHLIB_SUFFIX': '.so',
  'SHM_NEEDS_LIBRT': 0,
  'SIGNED_RIGHT_SHIFT_ZERO_FILLS': 0,
@@ -921,7 +931,7 @@ build_time_vars = {'ABIFLAGS': '',
  'SIZEOF__BOOL': 1,
  'SOABI': 'cpython-39-x86_64-linux-gnu',
  'SRCDIRS': 'Parser Parser/pegen Objects Python Modules Modules/_io Programs',
- 'SRC_GDB_HOOKS': '/tmp/build/80754af9/python-split_1605449976777/work/Tools/gdb/libpython.py',
+ 'SRC_GDB_HOOKS': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Tools/gdb/libpython.py',
  'STDC_HEADERS': 1,
  'STRICT_SYSV_CURSES': "/* Don't use ncurses extensions */",
  'STRIPFLAG': '-s',
@@ -937,19 +947,19 @@ build_time_vars = {'ABIFLAGS': '',
  'TESTPYTHON': './python',
  'TESTPYTHONOPTS': '',
  'TESTRUNNER': './python '
-               '/tmp/build/80754af9/python-split_1605449976777/work/Tools/scripts/run_tests.py',
+               '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Tools/scripts/run_tests.py',
  'TESTTIMEOUT': 1200,
- 'TIMEMODULE_LIB': 'rt',
+ 'TIMEMODULE_LIB': 0,
  'TIME_WITH_SYS_TIME': 1,
  'TM_IN_SYS_TIME': 0,
  'TZPATH': '/home/dhruv/Desktop/LangChain/venv/share/zoneinfo:/home/dhruv/Desktop/LangChain/venv/share/tzinfo',
  'UNICODE_DEPS': '\\',
  'UNIVERSALSDK': '',
  'UPDATE_FILE': 'python3 '
-                '/tmp/build/80754af9/python-split_1605449976777/work/Tools/scripts/update_file.py',
+                '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Tools/scripts/update_file.py',
  'USE_COMPUTED_GOTOS': 1,
  'VERSION': '3.9',
- 'VPATH': '/tmp/build/80754af9/python-split_1605449976777/work',
+ 'VPATH': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work',
  'WINDOW_HAS_FLAGS': 1,
  'WITH_DECIMAL_CONTEXTVAR': 1,
  'WITH_DOC_STRINGS': 1,
@@ -961,9 +971,9 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/tmp/build/80754af9/python-split_1605449976777/work/build-static',
- 'abs_srcdir': '/tmp/build/80754af9/python-split_1605449976777/work',
+ 'abs_builddir': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/build-static',
+ 'abs_srcdir': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work',
  'datarootdir': '/home/dhruv/Desktop/LangChain/venv/share',
  'exec_prefix': '/home/dhruv/Desktop/LangChain/venv',
  'prefix': '/home/dhruv/Desktop/LangChain/venv',
- 'srcdir': '/tmp/build/80754af9/python-split_1605449976777/work'}
+ 'srcdir': '/home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work'}

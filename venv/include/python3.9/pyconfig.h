@@ -282,7 +282,7 @@
 /* Define to 1 if you have the `dup3' function. */
 #define HAVE_DUP3 1
 
-/* Define if you have the '_dyld_shared_cache_contains_path' function */
+/* Define if you have the '_dyld_shared_cache_contains_path' function. */
 /* #undef HAVE_DYLD_SHARED_CACHE_CONTAINS_PATH */
 
 /* Defined when any dynamic module loading is enabled. */
@@ -614,11 +614,17 @@
 /* Define to 1 if you have the <libutil.h> header file. */
 /* #undef HAVE_LIBUTIL_H */
 
+/* Define to 1 if you have the `uuid' library (-luuid). */
+#define HAVE_LIBUUID 1
+
 /* Define if you have the 'link' function. */
 #define HAVE_LINK 1
 
 /* Define to 1 if you have the `linkat' function. */
 #define HAVE_LINKAT 1
+
+/* Define to 1 if you have the <linux/auxvec.h> header file. */
+#define HAVE_LINUX_AUXVEC_H 1
 
 /* Define to 1 if you have the <linux/can/bcm.h> header file. */
 /* #undef HAVE_LINUX_CAN_BCM_H */
@@ -733,6 +739,10 @@
 
 /* Define to 1 if you have the `nice' function. */
 #define HAVE_NICE 1
+
+/* Define if the internal form of wchar_t in non-Unicode locales is not
+   Unicode. */
+/* #undef HAVE_NON_UNICODE_WCHAR_T_REPRESENTATION */
 
 /* Define to 1 if you have the `openat' function. */
 #define HAVE_OPENAT 1
@@ -883,6 +893,9 @@
 
 /* Define to 1 if you have the `sched_setscheduler' function. */
 #define HAVE_SCHED_SETSCHEDULER 1
+
+/* Define to 1 if you have the `sem_clockwait' function. */
+/* #undef HAVE_SEM_CLOCKWAIT */
 
 /* Define to 1 if you have the `sem_getvalue' function. */
 #define HAVE_SEM_GETVALUE 1
@@ -1051,7 +1064,7 @@
 /* #undef HAVE_STRLCPY */
 
 /* Define to 1 if you have the <stropts.h> header file. */
-#define HAVE_STROPTS_H 1
+/* #undef HAVE_STROPTS_H */
 
 /* Define to 1 if you have the `strsignal' function. */
 #define HAVE_STRSIGNAL 1
@@ -1100,6 +1113,9 @@
 
 /* Define to 1 if you have the <sys/audioio.h> header file. */
 /* #undef HAVE_SYS_AUDIOIO_H */
+
+/* Define to 1 if you have the <sys/auxv.h> header file. */
+/* #undef HAVE_SYS_AUXV_H */
 
 /* Define to 1 if you have the <sys/bsdtty.h> header file. */
 /* #undef HAVE_SYS_BSDTTY_H */
@@ -1297,7 +1313,7 @@
 #define HAVE_UUID_GENERATE_TIME_SAFE 1
 
 /* Define to 1 if you have the <uuid.h> header file. */
-/* #undef HAVE_UUID_H */
+#define HAVE_UUID_H 1
 
 /* Define to 1 if you have the <uuid/uuid.h> header file. */
 #define HAVE_UUID_UUID_H 1
@@ -1489,7 +1505,7 @@
 #define SYS_SELECT_WITH_SYS_TIME 1
 
 /* Library needed by timemodule.c: librt may be needed for clock_gettime() */
-#define TIMEMODULE_LIB rt
+/* #undef TIMEMODULE_LIB */
 
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #define TIME_WITH_SYS_TIME 1
@@ -1622,11 +1638,6 @@
 
 /* Define on FreeBSD to activate all library features */
 #define __BSD_VISIBLE 1
-
-/* Define to 1 if type `char' is unsigned and you are not using gcc.  */
-#ifndef __CHAR_UNSIGNED__
-/* # undef __CHAR_UNSIGNED__ */
-#endif
 
 /* Define to 'long' if <time.h> doesn't define. */
 /* #undef clock_t */

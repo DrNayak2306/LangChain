@@ -1,4 +1,4 @@
-/* Generated automatically from /tmp/build/80754af9/python-split_1605449976777/work/Modules/config.c.in by makesetup. */
+/* Generated automatically from /home/conda/feedstock_root/build_artifacts/python-split_1703348423284/work/Modules/config.c.in by makesetup. */
 /* -*- C -*- ***********************************************
 Copyright (c) 2000, BeOpen.com.
 Copyright (c) 1995-2000, Corporation for National Research Initiatives.
