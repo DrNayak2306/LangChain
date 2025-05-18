@@ -11,3 +11,5 @@ conda activate venv
 
 pip install -r requirements.txt
 ```
+## Halted due to issues
+jupyter notebook not able to use conda libraries
