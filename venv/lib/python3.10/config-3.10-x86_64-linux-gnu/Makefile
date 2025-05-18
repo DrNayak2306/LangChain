@@ -28,10 +28,10 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.10
-srcdir=		/opt/conda/conda-bld/python-split_1646301021487/work
-VPATH=		/opt/conda/conda-bld/python-split_1646301021487/work
-abs_srcdir=	/opt/conda/conda-bld/python-split_1646301021487/work
-abs_builddir=	/opt/conda/conda-bld/python-split_1646301021487/work/build-static
+srcdir=		/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work
+VPATH=		/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work
+abs_srcdir=	/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work
+abs_builddir=	/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work/build-static
 
 
 CC=		x86_64-conda-linux-gnu-gcc -pthread
@@ -78,10 +78,10 @@ MKDIR_P=	/usr/bin/mkdir -p
 MAKESETUP=      $(srcdir)/Modules/makesetup
 
 # Compiler options
-OPT=		-DNDEBUG -g -fwrapv -O2 -Wall
+OPT=		-DNDEBUG -fwrapv -O2 -Wall
 BASECFLAGS=	 -Wno-unused-result -Wsign-compare
 BASECPPFLAGS=	-IObjects -IInclude -IPython
-CONFIGURE_CFLAGS=	-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/opt/conda/conda-bld/python-split_1646301021487/work=/usr/local/src/conda/python-3.10.0 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    
+CONFIGURE_CFLAGS=	-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work=/usr/local/src/conda/python-3.10.17 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    
 # CFLAGS_NODIST is used for building the interpreter and stdlib C extensions.
 # Use it when a compiler flag should _not_ be part of the distutils CFLAGS
 # once Python is installed (Issue #21121).
@@ -91,7 +91,7 @@ CONFIGURE_CFLAGS_NODIST= -fno-semantic-interposition     -g -std=c99 -Wextra -Wn
 # once Python is installed (bpo-35257)
 CONFIGURE_LDFLAGS_NODIST= -fno-semantic-interposition     -g
 CONFIGURE_CPPFLAGS=	-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include
-CONFIGURE_LDFLAGS=	-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib
+CONFIGURE_LDFLAGS=	-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib
 # Avoid assigning CFLAGS, LDFLAGS, etc. so users can use them on the
 # command line to append to these values without stomping the pre-set
 # values.
@@ -104,7 +104,6 @@ PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPP
 PY_LDFLAGS=	$(CONFIGURE_LDFLAGS) $(LDFLAGS)
 PY_LDFLAGS_NODIST=$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)
 NO_AS_NEEDED=	-Wl,--no-as-needed
-SGI_ABI=	@SGI_ABI@
 CCSHARED=	-fPIC
 # LINKFORSHARED are the flags passed to the $(CC) command that links
 # the python executable -- this is only needed for a few systems
@@ -218,7 +217,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--prefix=/home/dhruv/Desktop/LangChain/venv' '--build=x86_64-conda-linux-gnu' '--host=x86_64-conda-linux-gnu' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/home/dhruv/Desktop/LangChain/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/home/dhruv/Desktop/LangChain/venv/include' '--with-tcltk-libs=-L/home/dhruv/Desktop/LangChain/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/opt/conda/conda-bld/python-split_1646301021487/_build_env/x86_64-conda-linux-gnu/sysroot/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=x86_64-conda-linux-gnu' 'host_alias=x86_64-conda-linux-gnu' 'MACHDEP=linux' 'CC=x86_64-conda-linux-gnu-gcc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/opt/conda/conda-bld/python-split_1646301021487/work=/usr/local/src/conda/python-3.10.0 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    ' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include' 'CPP=/opt/conda/conda-bld/python-split_1646301021487/_build_env/bin/x86_64-conda-linux-gnu-cpp'
+CONFIG_ARGS=	 '--prefix=/home/dhruv/Desktop/LangChain/venv' '--build=x86_64-conda-linux-gnu' '--host=x86_64-conda-linux-gnu' '--enable-ipv6' '--with-ensurepip=no' '--with-tzpath=/home/dhruv/Desktop/LangChain/venv/share/zoneinfo' '--with-computed-gotos' '--with-system-ffi' '--with-system-expat' '--enable-loadable-sqlite-extensions' '--with-tcltk-includes=-I/home/dhruv/Desktop/LangChain/venv/include' '--with-tcltk-libs=-L/home/dhruv/Desktop/LangChain/venv/lib -ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' '--enable-optimizations' '-oldincludedir=/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/_build_env/x86_64-conda-linux-gnu/sysroot/usr/include' '--disable-shared' 'PROFILE_TASK=-m test --pgo' 'build_alias=x86_64-conda-linux-gnu' 'host_alias=x86_64-conda-linux-gnu' 'MACHDEP=linux' 'CC=x86_64-conda-linux-gnu-gcc' 'CFLAGS=-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /home/dhruv/Desktop/LangChain/venv/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/work=/usr/local/src/conda/python-3.10.17 -fdebug-prefix-map=/home/dhruv/Desktop/LangChain/venv=/usr/local/src/conda-prefix    ' 'LDFLAGS=-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/home/dhruv/Desktop/LangChain/venv/lib -Wl,-rpath-link,/home/dhruv/Desktop/LangChain/venv/lib -L/home/dhruv/Desktop/LangChain/venv/lib' 'CPPFLAGS=-DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /home/dhruv/Desktop/LangChain/venv/include -I/home/dhruv/Desktop/LangChain/venv/include' 'CPP=/home/conda/feedstock_root/build_artifacts/python-split_1744322439874/_build_env/bin/x86_64-conda-linux-gnu-cpp' 'PKG_CONFIG_PATH=/home/dhruv/Desktop/LangChain/venv/lib/pkgconfig'
 
 
 # Subdirectories with code
@@ -320,7 +319,7 @@ IO_OBJS=	\
 
 ##########################################################################
 
-LIBFFI_INCLUDEDIR=	
+LIBFFI_INCLUDEDIR=	/home/dhruv/Desktop/LangChain/venv/include
 
 ##########################################################################
 # Parser
@@ -1273,10 +1272,10 @@ quicktest:	build_all platform
 # SSL tests
 .PHONY: multisslcompile multissltest
 multisslcompile: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py --steps=modules
+	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/ssl/multissltests.py --steps=modules
 
 multissltest: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py
+	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/ssl/multissltests.py
 
 install:  commoninstall bininstall maninstall 
 	if test "x$(ENSUREPIP)" != "xno"  ; then \
@@ -1535,6 +1534,7 @@ TESTSUBDIRS=	ctypes/test \
 		test/test_warnings test/test_warnings/data \
 		test/test_zoneinfo test/test_zoneinfo/data \
 		test/tracedmodules \
+		test/typinganndata \
 		test/xmltestdata test/xmltestdata/c14n-20 \
 		test/ziptestdata \
 		tkinter/test tkinter/test/test_tkinter \
@@ -1881,6 +1881,18 @@ autoconf:
 	# Regenerate pyconfig.h.in from configure.ac using autoheader
 	(cd $(srcdir); autoheader -Wall)
 
+# See https://github.com/tiran/cpython_autoconf container
+.PHONY: regen-configure
+regen-configure:
+	@if command -v podman >/dev/null; then RUNTIME="podman"; else RUNTIME="docker"; fi; \
+	if ! command -v $$RUNTIME; then echo "$@ needs either Podman or Docker container runtime." >&2; exit 1; fi; \
+	if command -v selinuxenabled >/dev/null && selinuxenabled; then OPT=":Z"; fi; \
+	# Manifest corresponds with tag '269' \
+	CPYTHON_AUTOCONF_MANIFEST="sha256:f370fee95eefa3d57b00488bce4911635411fa83e2d293ced8cf8a3674ead939" \
+	CMD="$$RUNTIME run --rm --pull=missing -v $(abs_srcdir):/src$$OPT quay.io/tiran/cpython_autoconf@$$CPYTHON_AUTOCONF_MANIFEST"; \
+	echo $$CMD; \
+	$$CMD || exit $?
+
 # Create a tags file for vi
 tags::
 	ctags -w $(srcdir)/Include/*.h $(srcdir)/Include/cpython/*.h $(srcdir)/Include/internal/*.h
@@ -1911,8 +1923,7 @@ rmtestturds:
 	-rm -f gb-18030-2000.xml
 
 docclean:
-	-rm -rf Doc/build
-	-rm -rf Doc/tools/sphinx Doc/tools/pygments Doc/tools/docutils
+	$(MAKE) -C $(srcdir)/Doc clean
 
 # like the 'clean' target but retain the profile guided optimization (PGO)
 # data.  The PGO data is only valid if source code remains unchanged.
@@ -1956,7 +1967,7 @@ clobber: clean
 # Make things extra clean, before making a distribution:
 # remove all generated files, even Makefile[.pre]
 # Keep configure and Python-ast.[ch], it's possible they can't be generated
-distclean: clobber
+distclean: clobber docclean
 	for file in $(srcdir)/Lib/test/data/* ; do \
 	    if test "$$file" != "$(srcdir)/Lib/test/data/README"; then rm "$$file"; fi; \
 	done
@@ -1976,7 +1987,7 @@ distclean: clobber
 
 # Check that all symbols exported by libpython start with "Py" or "_Py"
 smelly: build_all
-	$(RUNSHARED) ./$(BUILDPYTHON) Tools/scripts/smelly.py
+	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/smelly.py
 
 # Find files with funny names
 funny:
@@ -2015,6 +2026,12 @@ patchcheck: build_all
 
 check-limited-abi: all
 	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/stable_abi.py --all $(srcdir)/Misc/stable_abi.txt
+
+.PHONY: update-config
+update-config:
+	curl -sL -o config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+	curl -sL -o config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
+	chmod +x config.guess config.sub
 
 # Dependencies
 
