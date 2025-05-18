@@ -1,3 +1,6 @@
-# LangChain GEN AI Tutorial – 6 End-to-End Projects using OpenAI, Google Gemini Pro, LLAMA2  
-## freeCodeCamp.org
+# LangChain GEN AI Tutorial – freeCodeCamp.org  sdf
 
+### venv is setup to use only relevant libraries for a project
+``` bash
+conda create -p venv python==3.10
+```
